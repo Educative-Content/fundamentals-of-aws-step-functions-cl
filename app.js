@@ -4,7 +4,8 @@ const axios = require('axios');
 
 const app = express();
 const port = 3000;
-const apiUrl = 'https://your-api-endpoint'; // Replace with your actual API endpoint
+const apiUrl = 'https://<id>.execute-api.us-east-1.amazonaws.com/v1'; // Replace with your actual API endpoint
+apiUrl = apiUrl + "/?Token=<tasktoken>";
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
