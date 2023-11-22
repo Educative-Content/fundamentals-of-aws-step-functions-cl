@@ -19,7 +19,7 @@ app.post('/submit', async (req, res) => {
 
     try {
         // Make a POST request to your API endpoint with the input value
-        const response = await axios.post(apiUrl, { inputValue });
+        const response = await axios.post(apiUrl, { "input" : inputValue });
 
         // Log the API response
         console.log('API Response:', response.data);
