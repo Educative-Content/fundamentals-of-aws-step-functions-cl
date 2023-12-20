@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const axios = require('axios');
+const fs = require('fs');
 
 const app = express();
 const port = 3000;
@@ -23,7 +24,8 @@ app.post('/submit', async (req, res) => {
         console.log('API Response:', response.data);
 
         // Send a response to the client
-        res.send('Input received and sent to the API!');
+        const indexContent = fs.readFileSync("./public/index.html", 'utf8');
+        res.send(indexContent);
     } catch (error) {
         // Handle errors
         console.error('Error sending data to API:', error.message);
