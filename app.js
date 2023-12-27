@@ -5,7 +5,7 @@ const fs = require('fs');
 
 const app = express();
 const port = 3000;
-apiUrl = 'https://<RestApiId>.execute-api.us-east-1.amazonaws.com/v1'; // Replace with your actual API endpoint
+apiUrl = '<RestApiUrl>'; 
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
@@ -17,7 +17,6 @@ app.post('/submit', async (req, res) => {
     console.log(`Current length: ${currentLength}`);
 
     try {
-        // Make a POST request to your API endpoint with the input value
         const response = await axios.post(apiUrl, { "input" : inputValue });
 
         // Log the API response
